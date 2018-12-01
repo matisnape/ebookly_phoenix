@@ -1,0 +1,26 @@
+<h2>Listing Bookshops</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for bookshop <- @bookshops do %>
+    <tr>
+      <td><%= bookshop.name %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: bookshop_path(@conn, :show, bookshop), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: bookshop_path(@conn, :edit, bookshop), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: bookshop_path(@conn, :delete, bookshop), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Bookshop", to: bookshop_path(@conn, :new) %></span>

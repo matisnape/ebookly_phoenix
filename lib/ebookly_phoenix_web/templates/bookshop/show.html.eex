@@ -1,0 +1,13 @@
+<h2>Show Bookshop</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @bookshop.name %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: bookshop_path(@conn, :edit, @bookshop) %></span>
+<span><%= link "Back", to: bookshop_path(@conn, :index) %></span>

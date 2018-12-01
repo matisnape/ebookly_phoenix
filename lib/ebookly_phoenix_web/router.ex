@@ -17,6 +17,10 @@ defmodule EbooklyPhoenixWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+
+    resources "/authors", AuthorController
+    resources "/bookshops", BookshopController
+    resources "/books", BookController
   end
 
   # Other scopes may use custom stacks.
