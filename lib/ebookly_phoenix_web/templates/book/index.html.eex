@@ -9,9 +9,18 @@
     </tr>
   </thead>
   <tbody>
+  <tr>
+      <td>Title</td>
+      <td>Author</td>
+      <td>Bookshop</td>
+
+      <td class="text-right"></td>
+    </tr>
 <%= for book <- @books do %>
     <tr>
       <td><%= book.title %></td>
+      <td><%= book.author.last_name %>, <%= book.author.first_name %></td>
+      <td><%= book.bookshop.name %></td>
 
       <td class="text-right">
         <span><%= link "Show", to: book_path(@conn, :show, book), class: "btn btn-default btn-xs" %></span>

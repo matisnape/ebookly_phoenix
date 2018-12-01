@@ -17,6 +17,9 @@
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
             <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+            <li><a href="/books">Books</a></li>
+            <li><a href="/authors">Authors</a></li>
+            <li><a href="/bookshops">Bookshops</a></li>
           </ul>
         </nav>
         <span class="logo"></span>

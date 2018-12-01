@@ -5,8 +5,8 @@ defmodule EbooklyPhoenix.Ebookly.Book do
 
   schema "books" do
     field :title, :string
-    field :author_id, :id
-    field :bookshop_id, :id
+    belongs_to :author, EbooklyPhoenix.Ebookly.Author
+    belongs_to :bookshop, EbooklyPhoenix.Ebookly.Bookshop
 
     timestamps()
   end
@@ -14,7 +14,7 @@ defmodule EbooklyPhoenix.Ebookly.Book do
   @doc false
   def changeset(book, attrs) do
     book
-    |> cast(attrs, [:title])
-    |> validate_required([:title])
+    |> cast(attrs, [:title, :author_id, :bookshop_id])
+    |> validate_required([:title, :author_id, :bookshop_id])
   end
 end

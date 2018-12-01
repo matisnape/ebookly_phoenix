@@ -7,6 +7,16 @@
     <%= @book.title %>
   </li>
 
+  <li>
+    <strong>Author:</strong>
+    <%= @author.last_name %>, <%= @author.first_name %>
+  </li>
+
+  <li>
+    <strong>Bookshop:</strong>
+    <%= @bookshop.name %>
+  </li>
+
 </ul>
 
 <span><%= link "Edit", to: book_path(@conn, :edit, @book) %></span>
